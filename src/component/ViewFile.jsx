@@ -54,6 +54,10 @@ function ViewFile(props) {
     file.setData([...file.data]);
     localStorage.setItem("data", JSON.stringify(file.data));
   };
+  const closeHandler = () => {
+    titleRef.current.value = props.title;
+    contentRef.current.value = props.content;
+  };
   return (
     <div className="viewFile">
       <button
@@ -69,6 +73,7 @@ function ViewFile(props) {
       </button>
       <div
         class="modal fade"
+        data-bs-backdrop="static"
         id={`exampleModal${props.id}`}
         tabindex="-1"
         aria-labelledby="exampleModalLabel"
@@ -84,6 +89,7 @@ function ViewFile(props) {
                 type="button"
                 class="btn-close"
                 data-bs-dismiss="modal"
+                onClick={closeHandler}
                 aria-label="Close"
               ></button>
             </div>
@@ -155,6 +161,7 @@ function ViewFile(props) {
                 type="button"
                 class="btn btn-dark"
                 data-bs-dismiss="modal"
+                onClick={closeHandler}
               >
                 Close
               </button>
