@@ -1,0 +1,33 @@
+.displayFiles {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 50%;
+  justify-content: center;
+  column-gap: 3em;
+  row-gap: 3em;
+}
+.material-icons:hover {
+  cursor: pointer;
+}
+.viewFile {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 1em;
+  border-radius: 14px;
+}
+
+.btn-light {
+  font-size: 28px;
+}
+
+@media screen and (max-width: 800px) {
+  .displayFiles {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}
+@media screen and (max-width: 525px) {
+  .displayFiles {
+    display: grid;
+    grid-template-columns: auto;
+  }
+}
